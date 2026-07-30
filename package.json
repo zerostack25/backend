@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Mayzaa Backend API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@replit/database": "^2.0.1",
+    "@supabase/supabase-js": "^2.110.9",
+    "axios": "^1.18.1",
+    "bcryptjs": "^2.4.3",
+    "canvas": "^3.2.3",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.6",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "express-fileupload": "^1.5.2",
+    "express-rate-limit": "^7.5.1",
+    "form-data": "^4.0.6",
+    "helmet": "^7.2.0",
+    "jsdom": "^29.1.1",
+    "morgan": "^1.11.0"
+  }
+}

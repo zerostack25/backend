@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>This site can't be reached</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --bg: #202124;
+    --text-primary: #e8eaed;
+    --text-secondary: #bdc1c6;
+    --text-tertiary: #9aa0a6;
+    --link: #8ab4f8;
+    --btn-primary-bg: #8ab4f8;
+    --btn-primary-text: #202124;
+    --btn-outline-border: #5f6368;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    width: 100%;
+    max-width: 560px;
+    padding: 0 24px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  @media (max-width: 700px) {
+    body {
+      align-items: flex-start;
+      padding-top: 48px;
+    }
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 24px;
+    color: var(--text-tertiary);
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 16px 0;
+  }
+  .description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+  }
+  .description b {
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .suggestions {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+  .suggestions ul {
+    padding-left: 20px;
+    margin: 8px 0 0 0;
+    list-style-type: disc;
+  }
+  .suggestions li {
+    margin-bottom: 4px;
+  }
+  .suggestions a {
+    color: var(--link);
+    text-decoration: none;
+  }
+  .suggestions a:hover {
+    text-decoration: underline;
+  }
+  .error-code {
+    font-size: 12px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .button-bar {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 560px;
+  }
+  button {
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 9px 20px;
+    border-radius: 20px;
+  }
+  button.primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: none;
+  }
+  button.primary:hover {
+    background: #aecbfa;
+  }
+  button.outline {
+    background: transparent;
+    color: var(--link);
+    border: 1px solid var(--btn-outline-border);
+  }
+  button.outline:hover {
+    background: rgba(138, 180, 248, 0.08);
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+        <path d="M15 2v5h5"/>
+        <circle cx="10" cy="14.5" r="0.6" fill="currentColor" stroke="none"/>
+        <circle cx="14" cy="14.5" r="0.6" fill="currentColor" stroke="none"/>
+        <path d="M9.5 18c1-1.2 4-1.2 5 0" stroke-linecap="round"/>
+    </svg>
+    <h1>This site can't be reached</h1>
+    <p class="description"><b id="error-domain">localhost</b> refused to connect.</p>
+    <div class="suggestions">
+      Try:
+      <ul>
+        <li>Checking the connection</li>
+        <li><a href="#" onclick="return false;">Checking the proxy and the firewall</a></li>
+      </ul>
+    </div>
+    <p class="error-code">ERR_CONNECTION_REFUSED</p>
+    <div class="button-bar">
+      <button class="primary" onclick="location.reload()">Reload</button>
+      <button class="outline" onclick="alert('Details clicked')">Details</button>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const domain = window.location.hostname || 'localhost';
+      document.getElementById('error-domain').textContent = domain;
+    });
+  </script>
+</body>
+</html>
